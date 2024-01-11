@@ -24,9 +24,9 @@ export const MasonryComponent = ({
       >
         {images.map((image, idx) => (
           <img
-            key={image.src}
+            key={image.url}
             className="my-3 cursor-pointer rounded-lg hover:opacity-90"
-            src={image.src}
+            src={image.url}
             alt={idx.toString()}
             onClick={() => {
               setImageIdx(idx);
@@ -40,7 +40,7 @@ export const MasonryComponent = ({
         index={imageIdx}
         close={() => setOpen(false)}
         slides={images.map((image) => ({
-          src: image.src,
+          src: image.url,
         }))}
       />
     </div>

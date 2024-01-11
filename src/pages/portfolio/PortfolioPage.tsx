@@ -1,51 +1,41 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { MasonryComponent } from "../../components/MasonryComponent";
 
-import image1 from "../../assets/images/home/DSC_2377.jpg";
-import image2 from "../../assets/images/home/DSC_2461.jpg";
-import image3 from "../../assets/images/home/DSC_2668.jpg";
-import image4 from "../../assets/images/home/DSC_3200.jpg";
-import image5 from "../../assets/images/home/DSC_3236.jpg";
-import image6 from "../../assets/images/home/DSC_3239.jpg";
-import image8 from "../../assets/images/home/DSCF0272.jpg";
-import image9 from "../../assets/images/home/DSCF0291.jpg";
-import image10 from "../../assets/images/home/DSCF0296.jpg";
-import image11 from "../../assets/images/home/DSCF0352.jpg";
 import { Tab } from "@headlessui/react";
 import { PhotoTypes } from "../../types";
-
-const images = [
-  { src: image11, type: [PhotoTypes.RETRATO, PhotoTypes.CALLEJERA] },
-  { src: image10, type: [PhotoTypes.RETRATO, PhotoTypes.CALLEJERA] },
-  { src: image9, type: [PhotoTypes.RETRATO] },
-  { src: image8, type: [PhotoTypes.RETRATO, PhotoTypes.EVENTO] },
-  { src: image6, type: [PhotoTypes.EVENTO, PhotoTypes.CALLEJERA] },
-  { src: image5, type: [PhotoTypes.CALLEJERA] },
-  { src: image4, type: [PhotoTypes.RETRATO] },
-  { src: image3, type: [PhotoTypes.RETRATO] },
-  { src: image2, type: [PhotoTypes.EVENTO] },
-  { src: image1, type: [PhotoTypes.RETRATO, PhotoTypes.CALLEJERA] },
-];
+import { DocumentData, collection, getDocs } from "firebase/firestore";
+import { firestore_db } from "../../firebase/config";
 
 export const PortfolioPage = () => {
   const [currentTab, setCurrentTab] = useState(0);
-  const [photos, setPhotos] = useState(images);
+  const [images, setImages] = useState<DocumentData[]>([]);
+  // const [isLoading, setIsLoading] = useState(true);
+  // const [error, setError] = useState(undefined);
 
   useEffect(() => {
-    setPhotos(() =>
+    const imagesRef = collection(firestore_db, "photos");
+    getDocs(imagesRef).then((snapshots) => {
+      const docs = snapshots.docs.map((doc) => doc.data());
+      setImages(docs);
+    });
+    // .catch((err) => setError(err))
+    // .finally(() => setIsLoading(false));
+  }, []);
+
+  useEffect(() => {
+    setImages(() =>
       images.filter((image) => {
         switch (currentTab) {
           case 1:
             return image.type.includes(PhotoTypes.RETRATO);
           case 2:
             return image.type.includes(PhotoTypes.EVENTO);
-          case 3:
-            return image.type.includes(PhotoTypes.CALLEJERA);
           default:
             return image;
         }
       })
     );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentTab]);
 
   return (
@@ -74,7 +64,7 @@ export const PortfolioPage = () => {
       </Tab.Group>
       <MasonryComponent
         className="w-11/12 p-2 sm:p-4 my-5 mx-auto"
-        images={photos}
+        images={images}
       />
     </div>
   );

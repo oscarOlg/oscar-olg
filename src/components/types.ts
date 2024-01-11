@@ -1,9 +1,11 @@
+import { DocumentData } from "firebase/firestore";
+
 export type ClassNameProps = {
   className?: string;
 };
 
 export type MasonryComponentProps = {
-  images: { src: string; type: string[] }[];
+  images: DocumentData[];
   className?: string;
 };
 

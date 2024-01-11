@@ -1,9 +1,9 @@
 import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/images/logo-no-background.png";
 import { SocialsComponent } from "./SocialsComponent";
 import useMobileView from "../hooks/useMobileView";
 import { Menu, Transition } from "@headlessui/react";
+import { LogoComponent } from "./LogoComponent";
 
 const links = [
   { href: "/", label: "Portafolio" },
@@ -15,14 +15,14 @@ export const NavBarComponent = () => {
   const { isMobile } = useMobileView();
 
   return (
-    <div className="opacity-90 fixed top-0 w-full px-5 h-[75px] flex center-items z-30 bg-stone-100 shadow-md">
+    <div className="opacity-95 fixed top-0 w-full px-5 h-[75px] flex center-items z-30 bg-stone-100 shadow-md">
       {isMobile ? (
         <Menu as="div" className="relative grid w-full">
           <div className="z-50 flex justify-between self-center">
             <Link to="/">
-              <img src={logo} alt="oscar olg logo" className="h-[50px]" />
+              <LogoComponent />
             </Link>
-            <Menu.Button className="transition rounded-lg shadow bg-stone-400 bg-opacity-70 hover:bg-opacity-30 px-3 py-2">
+            <Menu.Button className="transition rounded-lg shadow font-medium bg-stone-400 bg-opacity-70 hover:bg-opacity-30 px-3 py-2">
               Menu
             </Menu.Button>
           </div>
@@ -42,7 +42,7 @@ export const NavBarComponent = () => {
                     <Link
                       key={link.href}
                       to={link.href}
-                      className="transition rounded-lg w-[90px] font-medium shadow text-right bg-stone-300 hover:bg-stone-400 hover:bg-opacity-20 px-3 py-2"
+                      className="transition  w-[90px] text-right border-stone-400 border-b-2 hover:bg-stone-400 hover:bg-opacity-20 px-3 py-2"
                     >
                       {link.label}
                     </Link>
@@ -58,7 +58,7 @@ export const NavBarComponent = () => {
       ) : (
         <div className="grid grid-cols-4 w-full items-center text-stone-700 xl:gap-5 gap-2 md:gap-1">
           <Link to="/">
-            <img src={logo} alt="oscar olg logo" className="h-[50px]" />
+            <LogoComponent />
           </Link>
           <div className="col-span-2 flex gap-2 justify-self-center">
             {links.map((link) => (
