@@ -19,6 +19,12 @@ const socials = [
     url: "https://www.instagram.com/oscar.olg.photo/",
   },
   {
+    name: "WhatsApp",
+    width: 25,
+    height: 25.13,
+    url: "whatsapp://send?phone=+526566956875",
+  },
+  {
     name: SocialsNames.EMAIL,
     width: 30,
     height: 30,

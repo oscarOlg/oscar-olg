@@ -10,13 +10,13 @@ export const useFirestore = (collectionName: string) => {
   useEffect(() => {
     const colRef = collection(firestore_db, collectionName);
 
-    // getDocs(colRef)
-    //   .then((snapshots) => {
-    //     const docs = snapshots.docs.map((doc) => doc.data());
-    //     setData(docs);
-    //   })
-    //   .catch((err) => setError(err))
-    //   .finally(() => setIsLoading(false));
+    getDocs(colRef)
+      .then((snapshots) => {
+        const docs = snapshots.docs.map((doc) => doc.data());
+        setData(docs);
+      })
+      .catch((err) => setError(err))
+      .finally(() => setIsLoading(false));
   }, [collectionName]);
 
   return { data, isLoading, error };

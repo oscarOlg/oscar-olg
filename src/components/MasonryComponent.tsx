@@ -18,14 +18,14 @@ export const MasonryComponent = ({
   return (
     <div className={className}>
       <Masonry
-        breakpointCols={isMobile ? 2 : 3}
+        breakpointCols={isMobile ? 2 : 4}
         className="flex gap-2 z-10"
         columnClassName=""
       >
         {images.map((image, idx) => (
           <img
             key={image.url}
-            className="my-3 cursor-pointer rounded-lg hover:opacity-90"
+            className="my-3 cursor-pointer rounded-lg shadow	 hover:opacity-90"
             src={image.url}
             alt={idx.toString()}
             onClick={() => {

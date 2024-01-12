@@ -77,14 +77,14 @@ export const ContactPage = () => {
     <form
       ref={form}
       onSubmit={sendEmail}
-      className="flex flex-col gap-4 shadow rounded-lg p-4  border-2 border-stone-400 w-9/12 m-auto text-stone-700 font-medium"
+      className="flex flex-col gap-4 shadow rounded-lg p-4  border-2 border-slate-400 w-9/12 m-auto text-slate-700 font-medium"
     >
       <div className="flex flex-col gap-2">
         <label className="flex gap-1">
           Nombre <p className="font-light">(Obligatorio)</p>
         </label>
         <input
-          className="rounded-lg py-1 px-2 border-2 border-stone-300"
+          className="rounded-lg py-1 px-2 border-2 border-slate-300"
           type="text"
           name="user_name"
           required
@@ -95,7 +95,7 @@ export const ContactPage = () => {
           Email <p className="font-light">(Obligatorio)</p>
         </label>
         <input
-          className="rounded-lg py-1 px-2 border-2 border-stone-300"
+          className="rounded-lg py-1 px-2 border-2 border-slate-300"
           type="email"
           name="user_email"
           required
@@ -106,13 +106,13 @@ export const ContactPage = () => {
           Mensaje <p className="font-light">(Obligatorio)</p>
         </label>
         <textarea
-          className="rounded-lg p-2 border-2 border-stone-300"
+          className="rounded-lg p-2 border-2 border-slate-300"
           name="message"
           required
         />
       </div>
       <button
-        className="transition self-center w-36 rounded-lg border-2 border-stone-300 shadow hover:bg-stone-200 px-3 py-2"
+        className="transition self-center w-36 rounded-lg border-2 border-slate-300 shadow hover:bg-slate-200 px-3 py-2"
         type="submit"
         disabled={isLoading}
       >
