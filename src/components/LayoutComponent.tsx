@@ -6,7 +6,7 @@ export const LayoutComponent = () => {
   return (
     <div>
       <NavBarComponent />
-      <div className="w-full h-full pt-[100px] mb-5">
+      <div className="mt-[75px] mb-5">
         <Outlet />
       </div>
     </div>

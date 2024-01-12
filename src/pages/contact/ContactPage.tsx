@@ -75,15 +75,26 @@ export const ContactPage = () => {
   }, [success, error]);
 
   return (
-    <div className="flex md:justify-around items-center md:items-start gap-10 md:flex-row	flex-col">
-      <div className="flex flex-col gap-4">
-        <div>text</div>
+    <div className="flex pt-8 w-10/12	 m-auto md:justify-around items-center md:items-start gap-10 md:flex-row	flex-col ">
+      <div className="flex flex-col md:w-full w-3/4 gap-6">
+        <div className="flex flex-col gap-3 text-justify p-1text-slate-700">
+          <p>
+            <b>¡Me encantaría escuchar de ti! </b>Si tienes alguna pregunta o
+            estás interesado en <u>reservar una sesión o un evento</u>, no dudes
+            en ponerte en contacto.
+          </p>
+          <p>
+            <u>Estoy abierto a colaboraciones y proyectos especiales</u>. Si
+            tienes una idea única en mente, <b>¡hablemos!</b> Estoy emocionado
+            por la oportunidad de explorar nuevas posibilidades creativas.
+          </p>
+        </div>
         <SocialsComponent />
       </div>
       <form
         ref={form}
         onSubmit={sendEmail}
-        className="flex flex-col w-2/4 gap-4 shadow rounded-lg p-4 bg-slate-300 border-2 border-slate-400 text-slate-700 font-medium"
+        className="flex flex-col md:w-full w-3/4 gap-4 shadow rounded-lg p-4 bg-slate-300 border-2 border-slate-400 text-slate-700 font-medium"
       >
         <div className="flex flex-col gap-2">
           <label className="flex gap-1">
@@ -112,7 +123,7 @@ export const ContactPage = () => {
             Mensaje <p className="font-light">(Obligatorio)</p>
           </label>
           <textarea
-            className="rounded-lg p-2 border-2 border-slate-400"
+            className="rounded-lg p-2 min-h-28 border-2 border-slate-400"
             name="message"
             required
           />
