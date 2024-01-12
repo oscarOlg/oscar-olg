@@ -10,7 +10,7 @@ export const PortfolioPage = () => {
   const { data: images } = useFirestore("photos");
 
   return (
-    <div>
+    <div className="from-slate-100 via-slate-300 to-slate-800 bg-gradient-to-b">
       <Tab.Group
         onChange={(index) => {
           setCurrentTab(index);

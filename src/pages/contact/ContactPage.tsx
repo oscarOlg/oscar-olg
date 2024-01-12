@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import { SocialsComponent } from "../../components/SocialsComponent";
 
 export const ContactPage = () => {
   const form = useRef(null);
@@ -74,58 +75,64 @@ export const ContactPage = () => {
   }, [success, error]);
 
   return (
-    <form
-      ref={form}
-      onSubmit={sendEmail}
-      className="flex flex-col gap-4 shadow rounded-lg p-4  border-2 border-slate-400 w-9/12 m-auto text-slate-700 font-medium"
-    >
-      <div className="flex flex-col gap-2">
-        <label className="flex gap-1">
-          Nombre <p className="font-light">(Obligatorio)</p>
-        </label>
-        <input
-          className="rounded-lg py-1 px-2 border-2 border-slate-300"
-          type="text"
-          name="user_name"
-          required
-        />
+    <div className="flex md:justify-around items-center md:items-start gap-10 md:flex-row	flex-col">
+      <div className="flex flex-col gap-4">
+        <div>text</div>
+        <SocialsComponent />
       </div>
-      <div className="flex flex-col gap-2">
-        <label className="flex gap-1">
-          Email <p className="font-light">(Obligatorio)</p>
-        </label>
-        <input
-          className="rounded-lg py-1 px-2 border-2 border-slate-300"
-          type="email"
-          name="user_email"
-          required
-        />
-      </div>
-      <div className="flex flex-col gap-2">
-        <label className="flex gap-1">
-          Mensaje <p className="font-light">(Obligatorio)</p>
-        </label>
-        <textarea
-          className="rounded-lg p-2 border-2 border-slate-300"
-          name="message"
-          required
-        />
-      </div>
-      <button
-        className="transition self-center w-36 rounded-lg border-2 border-slate-300 shadow hover:bg-slate-200 px-3 py-2"
-        type="submit"
-        disabled={isLoading}
+      <form
+        ref={form}
+        onSubmit={sendEmail}
+        className="flex flex-col w-2/4 gap-4 shadow rounded-lg p-4 bg-slate-300 border-2 border-slate-400 text-slate-700 font-medium"
       >
-        Enviar
-      </button>
-      {(success || error) && (
-        <p
-          className={`self-center font-normal rounded border-2 px-2 py-1 shadow text-center ${getMessageStyles()}`}
+        <div className="flex flex-col gap-2">
+          <label className="flex gap-1">
+            Nombre <p className="font-light">(Obligatorio)</p>
+          </label>
+          <input
+            className="rounded-lg py-1 px-2 border-2 border-slate-400"
+            type="text"
+            name="user_name"
+            required
+          />
+        </div>
+        <div className="flex flex-col gap-2">
+          <label className="flex gap-1">
+            Email <p className="font-light">(Obligatorio)</p>
+          </label>
+          <input
+            className="rounded-lg py-1 px-2 border-2 border-slate-400"
+            type="email"
+            name="user_email"
+            required
+          />
+        </div>
+        <div className="flex flex-col gap-2">
+          <label className="flex gap-1">
+            Mensaje <p className="font-light">(Obligatorio)</p>
+          </label>
+          <textarea
+            className="rounded-lg p-2 border-2 border-slate-400"
+            name="message"
+            required
+          />
+        </div>
+        <button
+          className="transition self-center w-36 rounded-lg border-2 border-slate-400 shadow hover:bg-slate-200 px-3 py-2"
+          type="submit"
+          disabled={isLoading}
         >
-          {getMessage()}
-        </p>
-      )}
-      {!(success || error) && <div className="p-4"></div>}
-    </form>
+          Enviar
+        </button>
+        {(success || error) && (
+          <p
+            className={`self-center font-normal rounded border-2 px-2 py-1 shadow text-center ${getMessageStyles()}`}
+          >
+            {getMessage()}
+          </p>
+        )}
+        {!(success || error) && <div className="p-4"></div>}
+      </form>
+    </div>
   );
 };

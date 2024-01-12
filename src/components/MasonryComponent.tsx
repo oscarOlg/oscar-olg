@@ -25,7 +25,7 @@ export const MasonryComponent = ({
         {images.map((image, idx) => (
           <img
             key={image.url}
-            className="my-3 cursor-pointer rounded-lg shadow	 hover:opacity-90"
+            className="my-3 cursor-pointer rounded-lg shadow hover:opacity-90"
             src={image.url}
             alt={idx.toString()}
             onClick={() => {
