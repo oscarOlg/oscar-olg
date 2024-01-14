@@ -42,7 +42,7 @@ export const NavBarComponent = () => {
                     <Link
                       key={link.href}
                       to={link.href}
-                      className="transition  w-[90px] text-right border-slate-400 border-b-2 hover:bg-slate-400 hover:bg-opacity-20 px-3 py-2"
+                      className="transition w-[90px] text-right border-slate-400 border-b-2 rounded-t hover:bg-slate-400 hover:bg-opacity-20 px-3 py-2"
                     >
                       {link.label}
                     </Link>
@@ -60,12 +60,12 @@ export const NavBarComponent = () => {
           <Link to="/">
             <LogoComponent />
           </Link>
-          <div className="col-span-2 flex gap-2 justify-self-center">
+          <div className="col-span-2 flex gap-4 justify-self-center">
             {links.map((link) => (
               <Link
                 key={link.href}
                 to={link.href}
-                className="transition rounded-lg font-medium shadow hover:bg-slate-300 px-3 py-2"
+                className="transition rounded-t border-slate-400 border-b-2 font-medium hover:bg-slate-300 px-3 py-2"
               >
                 {link.label}
               </Link>

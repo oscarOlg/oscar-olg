@@ -75,7 +75,7 @@ export const ContactPage = () => {
   }, [success, error]);
 
   return (
-    <div className="flex pt-8 w-10/12	 m-auto md:justify-around items-center md:items-start gap-10 md:flex-row	flex-col ">
+    <div className="flex pt-8 pb-24 w-10/12	 m-auto md:justify-around items-center md:items-start gap-10 md:flex-row	flex-col ">
       <div className="flex flex-col md:w-full w-3/4 gap-6">
         <div className="flex flex-col gap-3 text-justify p-1text-slate-700">
           <p>
@@ -94,7 +94,7 @@ export const ContactPage = () => {
       <form
         ref={form}
         onSubmit={sendEmail}
-        className="flex flex-col md:w-full w-3/4 gap-4 shadow rounded-lg p-4 bg-slate-300 border-2 border-slate-400 text-slate-700 font-medium"
+        className="flex flex-col w-full gap-4 shadow rounded-lg p-4 bg-slate-300 border-2 border-slate-400 text-slate-700 font-medium"
       >
         <div className="flex flex-col gap-2">
           <label className="flex gap-1">

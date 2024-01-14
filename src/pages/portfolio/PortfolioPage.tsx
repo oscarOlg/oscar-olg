@@ -29,7 +29,7 @@ export const PortfolioPage = () => {
             <Tab key={tabName} as={Fragment}>
               {({ selected }) => (
                 <button
-                  className={`px-2 py-1 md:w-20 w-28 transition hover:bg-slate-700 rounded-t text-slate-100 font-semibold border-b-2  ${
+                  className={`px-2 py-1 md:w-20 w-28 transition md:hover:bg-slate-700 rounded-t text-slate-100 font-semibold border-b-2  ${
                     selected
                       ? "border-slate-100"
                       : "border-slate-700 opacity-80"
