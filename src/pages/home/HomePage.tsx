@@ -10,11 +10,11 @@ export const HomePage = () => {
   const { data: images } = useFirestore("photos");
 
   return (
-    <div className="flex flex-col gap-7 md:pt-9 pb-9">
+    <div className="flex flex-col bg-slate-300 gap-7 md:pt-9 pb-9">
       <CarouselComponent images={images} />
       <Link
         to="/portfolio"
-        className="transition w-30 self-center rounded-lg border-slate-400 border-2 font-medium hover:bg-slate-300 px-3 py-2"
+        className="transition w-30 self-center rounded-lg bg-slate-200 border-slate-400 border-2 font-medium hover:bg-slate-100 px-3 py-2"
       >
         Ver Portafolio
       </Link>
