@@ -81,7 +81,8 @@ export const ContactPage = () => {
           <p>
             <b>¡Me encantaría escuchar de ti! </b>Si tienes alguna pregunta o
             estás interesado en <u>reservar una sesión o un evento</u>, no dudes
-            en ponerte en contacto.
+            en ponerte en contacto, tendre una respuesta para ti en las proximas
+            horas de recibir tu mensaje.
           </p>
           <p>
             <u>Estoy abierto a colaboraciones y proyectos especiales</u>. Si
@@ -89,6 +90,7 @@ export const ContactPage = () => {
             por la oportunidad de explorar nuevas posibilidades creativas.
           </p>
         </div>
+        <p className="font-medium text-lg">oscar.olg.photo@gmail.com</p>
         <SocialsComponent />
       </div>
       <form

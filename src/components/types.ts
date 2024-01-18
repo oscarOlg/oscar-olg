@@ -9,6 +9,11 @@ export type MasonryComponentProps = {
   className?: string;
 };
 
+export type CarouselComponentProps = {
+  images: DocumentData[];
+  className?: string;
+};
+
 export type InputComponentProps = {
   label: string;
   type: string;

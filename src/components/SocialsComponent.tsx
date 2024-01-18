@@ -6,17 +6,17 @@ import { ReactComponent as InstagramLogo } from "../assets/svg/Instagram.svg";
 import { ClassNameProps, SocialsNames } from "./types";
 
 const socials = [
-  // {
-  //   name: SocialsNames.FACEBOOK,
-  //   width: 28,
-  //   height: 35,
-  //   url: "https://www.facebook.com/profile.php?id=100088045982178",
-  // },
   {
     name: SocialsNames.INSTAGRAM,
     width: 25,
     height: 25,
     url: "https://www.instagram.com/oscar.olg.photo/",
+  },
+  {
+    name: SocialsNames.FACEBOOK,
+    width: 28,
+    height: 35,
+    url: "https://www.facebook.com/profile.php?id=100088045982178",
   },
   {
     name: "WhatsApp",

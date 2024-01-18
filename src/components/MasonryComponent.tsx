@@ -1,11 +1,12 @@
-"use client";
 import React, { useState } from "react";
 import Masonry from "react-masonry-css";
+import { motion } from "framer-motion";
 import { MasonryComponentProps } from "./types";
 
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import useMobileView from "../hooks/useMobileView";
+import { BackToTopButton } from "../utils/BackToTopButton";
 
 export const MasonryComponent = ({
   images,
@@ -23,7 +24,7 @@ export const MasonryComponent = ({
         columnClassName=""
       >
         {images.map((image, idx) => (
-          <img
+          <motion.img
             key={image.url}
             className="my-3 cursor-pointer rounded-lg shadow hover:opacity-90"
             src={image.url}
@@ -32,6 +33,9 @@ export const MasonryComponent = ({
               setImageIdx(idx);
               setOpen(true);
             }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
           />
         ))}
       </Masonry>
@@ -43,6 +47,7 @@ export const MasonryComponent = ({
           src: image.url,
         }))}
       />
+      <BackToTopButton />
     </div>
   );
 };

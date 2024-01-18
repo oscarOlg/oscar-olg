@@ -1,19 +1,39 @@
 import React from "react";
-import { ReactComponent as TopArrowIcon } from "../../assets/svg/arrow-top-right-svgrepo-com.svg";
-import profile from "../../assets/images/retrato.jpg";
+import { useFirestore } from "../../hooks/useFirestore";
+import { CarouselComponent } from "../../components/CarouselComponent";
 import { Link } from "react-router-dom";
 import { SocialsComponent } from "../../components/SocialsComponent";
+import profile from "../../assets/images/retrato.jpg";
+import { ReactComponent as TopArrowIcon } from "../../assets/svg/arrow-top-right-svgrepo-com.svg";
 
-export const AboutPage = () => {
+export const HomePage = () => {
+  const { data: images } = useFirestore("photos");
+
   return (
-    <div className="w-full h-full pt-8 pb-24">
-      <div className="flex w-10/12 items-center md:items-start md:flex-row flex-col gap-4 bg-slate-200 p-9 m-auto shadow rounded-lg">
+    <div className="flex flex-col gap-7 md:pt-9 pb-9">
+      <CarouselComponent images={images} />
+      <Link
+        to="/portfolio"
+        className="transition w-30 self-center rounded-lg border-slate-400 border-2 font-medium hover:bg-slate-300 px-3 py-2"
+      >
+        Ver Portafolio
+      </Link>
+      <div className="h-[300px] shadow items-center justify-evenly p-3 flex bg-[url('./assets/images/bg-image.jpg')] bg-no-repeat bg-cover bg-center bg-fixed">
+        <p className="italic text-xl w-10/12 md:text-2xl font-medium text-slate-50">
+          Explorando la vida a través de la lente, capturando la esencia de cada
+          instante.
+        </p>
+      </div>
+      <div className="flex md:w-11/12 w-10/12 items-center md:items-start md:flex-row flex-col gap-4 bg-slate-200 p-9 m-auto shadow rounded-lg">
         <img
-          className="md:h-[500px]  rounded-lg"
+          className="md:h-[400px] h-[300px] rounded-lg"
           src={profile}
-          alt="fotografia de retrato del fotografo"
+          alt="retrato del fotografo"
         />
         <div className="flex flex-col justify-around gap-4 text-justify p-1	text-slate-700">
+          <p className="text-slate-700 italic text-xl font-medium">
+            Conoce a tu fotógrafo:
+          </p>
           <p>
             ¡Hola! Soy Oscar Sanchez Olguin, esposo, ingeniero y un apasionado
             fotógrafo, con el deseo constante de{" "}
@@ -41,9 +61,10 @@ export const AboutPage = () => {
               <TopArrowIcon className="inline-block	h-[70px] w-[70px] sm:h-7 sm:w-7 md:h-[30px] md:w-[30px]" />
             </div>
           </Link>
-          <SocialsComponent className="self-center mt-5" />
         </div>
       </div>
+      <SocialsComponent className="self-center" />
+      {/* <img src={bgImage} /> */}
     </div>
   );
 };

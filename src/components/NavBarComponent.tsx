@@ -6,8 +6,9 @@ import { Menu, Transition } from "@headlessui/react";
 import { LogoComponent } from "./LogoComponent";
 
 const links = [
-  { href: "/", label: "Portafolio" },
-  { href: "/about", label: "Sobre mi" },
+  { href: "/", label: "Inicio" },
+  { href: "/Portfolio", label: "Portafolio" },
+  // { href: "/about", label: "Sobre mi" },
   { href: "/contact", label: "Contacto" },
 ];
 
@@ -65,7 +66,7 @@ export const NavBarComponent = () => {
               <Link
                 key={link.href}
                 to={link.href}
-                className="transition rounded-t border-slate-400 border-b-2 font-medium hover:bg-slate-300 px-3 py-2"
+                className="transition rounded-t border-slate-400 border-b-2 font-medium hover:bg-slate-300 md:px-2 lg:px-3 py-2"
               >
                 {link.label}
               </Link>
