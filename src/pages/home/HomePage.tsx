@@ -18,7 +18,7 @@ export const HomePage = () => {
       >
         Ver Portafolio
       </Link>
-      <div className="h-[300px] shadow items-center justify-evenly p-3 flex bg-[url('./assets/images/bg-image.jpg')] bg-no-repeat bg-cover bg-fixed">
+      <div className="h-[300px] shadow items-center justify-evenly p-3 flex bg-[url('./assets/images/bg-image.jpg')] md:bg-fixed bg-cover bg-center">
         <p className="italic text-xl w-10/12 md:text-2xl font-medium text-slate-50">
           Explorando la vida a través de la lente, capturando la esencia de cada
           instante.
