@@ -33,7 +33,6 @@ const tabList = [
 export const PortfolioPage = () => {
   const { data: images } = useFirestore("photos");
   const [searchParams] = useSearchParams();
-  console.log(searchParams.get("type"));
 
   const sortByName = (a: DocumentData, b: DocumentData) => {
     const textA = a.name.toUpperCase();

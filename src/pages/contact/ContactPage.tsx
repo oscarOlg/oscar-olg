@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { SocialsComponent } from "../../components/SocialsComponent";
+import { motion } from "framer-motion";
 
 export const ContactPage = () => {
   const form = useRef(null);
@@ -145,11 +146,14 @@ export const ContactPage = () => {
             Enviar
           </button>
           {(success || error) && (
-            <p
+            <motion.p
+              exit={{ opacity: 0 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               className={`self-center font-normal rounded border-2 px-2 py-1 shadow text-center ${getMessageStyles()}`}
             >
               {getMessage()}
-            </p>
+            </motion.p>
           )}
           {!(success || error) && <div className="p-4"></div>}
         </form>
