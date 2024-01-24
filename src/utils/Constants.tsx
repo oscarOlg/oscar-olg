@@ -1,6 +1,6 @@
 export const EVENTS_DESCRIPTION = (
   <>
-    Trabajo tanto en <b>bodas como eventos</b> con la intención de{" "}
+    Trabajo tanto en <b>bodas y eventos</b> con la intención de{" "}
     <u>contar historias a través de imágenes emotivas y auténticas</u>, desde la
     intimidad de las ceremonias hasta la gozo de los eventos, mi objetivo es
     crear recuerdos visuales que perduren toda la vida.{" "}
