@@ -8,18 +8,15 @@ export const CarouselComponent = ({ images }: CarouselComponentProps) => {
   const [index, setIndex] = useState(0);
   const ref = React.useRef<ControllerRef>(null);
   const slidesNames = [
-    "DSCF0209.jpg",
-    "_DSF1774.jpg",
-    "DSCF8204.jpg",
-    "DSCF7985.jpg",
-    "DSCF7892.jpg",
-    "DSCF8581.jpg",
+    "DSCF0007.jpg",
+    "DSCF0027.jpg",
     "DSCF0352.jpg",
-    "_DSF1004.jpg",
+    "DSCF7871.jpg",
+    "DSCF7887.jpg",
+    "DSCF8004.jpg",
     "DSCF9181.jpg",
-    "_DSF1564.jpg",
-    "DSCF0217.jpg",
-    "IMG_0891.jpg",
+    "DSCF8952.jpg",
+    "DSF1774.jpg",
   ];
 
   React.useEffect(() => {

@@ -22,6 +22,13 @@ export type InputComponentProps = {
   placeholder?: string;
 };
 
+export type ImageCoverLinkComponentProps = {
+  image: string;
+  link: string;
+  title: string;
+  description?: string;
+};
+
 export enum SocialsNames {
   FACEBOOK = "Facebook",
   INSTAGRAM = "Instagram",

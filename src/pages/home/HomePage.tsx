@@ -1,10 +1,16 @@
 import React from "react";
 import { useFirestore } from "../../hooks/useFirestore";
 import { CarouselComponent } from "../../components/CarouselComponent";
-import { Link } from "react-router-dom";
 import { SocialsComponent } from "../../components/SocialsComponent";
-import profile from "../../assets/images/retrato.jpg";
-import { ReactComponent as TopArrowIcon } from "../../assets/svg/arrow-top-right-svgrepo-com.svg";
+import portraitCover from "../../assets/images/portrait-cover.jpg";
+import eventCover from "../../assets/images/event-cover.jpg";
+import { AboutCardComponent } from "../../components/AboutCardComponent";
+import { Link } from "react-router-dom";
+import { PortfolioParamTypes } from "../../types";
+import {
+  PORTRAITS_DESCRIPTION,
+  EVENTS_DESCRIPTION,
+} from "../../utils/Constants";
 
 export const HomePage = () => {
   const { data: images } = useFirestore("photos");
@@ -12,59 +18,52 @@ export const HomePage = () => {
   return (
     <div className="flex flex-col bg-slate-300 gap-7 lg:pt-7 pb-9">
       <CarouselComponent images={images} />
-      <Link
-        to="/portfolio"
-        className="transition w-30 self-center rounded-lg bg-slate-200 border-slate-400 border-2 font-medium hover:bg-slate-100 px-3 py-2"
-      >
-        Ver Portafolio
-      </Link>
-      <div className="h-[300px] shadow items-center justify-evenly p-3 flex bg-[url('./assets/images/bg-image.jpg')] md:bg-fixed bg-cover bg-center">
-        <p className="italic text-xl w-10/12 md:text-2xl font-medium text-slate-50">
-          Explorando la vida a través de la lente, capturando la esencia de cada
-          instante.
-        </p>
-      </div>
-      <div className="flex md:w-11/12 w-10/12 items-center md:items-start md:flex-row flex-col gap-4 bg-slate-200 p-9 m-auto shadow rounded-lg">
+      <div className="w-8/12 max-w-5xl items-center flex md:flex-row flex-col gap-7 self-center">
         <img
-          className="md:h-[400px] h-[300px] rounded-lg"
-          src={profile}
-          alt="retrato del fotografo"
+          className="self-center h-64 sm:h-96"
+          src={portraitCover}
+          alt="retratos"
         />
-        <div className="flex flex-col justify-around gap-4 text-justify p-1	text-slate-700">
+        <div className="flex w-full flex-col gap-4 md:gap-10">
           <p className="text-slate-700 italic text-xl font-medium">
-            Conoce a tu fotógrafo:
+            Fotografia de retrato
           </p>
-          <p>
-            ¡Hola! Soy Oscar Sanchez Olguin, esposo, ingeniero y un apasionado
-            fotógrafo, con el deseo constante de{" "}
-            <u>capturar momentos y transformarlos en recuerdos atemporales.</u>
-          </p>
-          <p>
-            He tenido el privilegio de trabajar en una variedad de proyectos, en
-            Ciudad Jaurez, Chihuahua y en El Paso, Texas, desde{" "}
-            <b>bodas, eventos especiales y sesiones de retratos</b>. Considero
-            cada proyecto una nueva oportunidad para explorar mi creatividad,
-            contar historias, congelar emociones, y revelar la belleza en los
-            detalles cotidianos.
-          </p>
-          <p>
-            <b>Gracias por visitar y ser parte de mi viaje fotográfico</b>.
-            Estoy emocionado de poder compartir contigo la magia detrás de cada
-            imagen.
+          <p className="text-justify p-1 text-slate-700">
+            {PORTRAITS_DESCRIPTION}
           </p>
           <Link
-            to="/contact"
-            className="mt-6 text-center self-center transition rounded-lg font-medium shadow text-slate-200 bg-slate-700 hover:bg-slate-500 px-3 py-2"
+            to={`/portfolio/?type=${PortfolioParamTypes.PORTRAITS}`}
+            className="transition self-center font-medium rounded-lg text-slate-100 shadow bg-slate-800 hover:bg-slate-700 px-5 py-2"
           >
-            <div className="text-xl flex items-center font-medium">
-              ¡Capturemos momentos, creando recuerdos!{" "}
-              <TopArrowIcon className="inline-block	h-[70px] w-[70px] sm:h-7 sm:w-7 md:h-[30px] md:w-[30px]" />
-            </div>
+            Ver mas
           </Link>
         </div>
       </div>
+      <hr className="w-1/2 h-1 mx-auto my-4 border-0 rounded-lg md:my-10 bg-slate-400" />
+      <div className="w-8/12 max-w-5xl items-center flex md:flex-row md:flex-row-reverse flex-col gap-7 self-center">
+        <img
+          className="self-center h-64 sm:h-96"
+          src={eventCover}
+          alt="eventos"
+        />
+        <div className="flex w-full flex-col justify-evenly gap-4">
+          <p className="text-slate-700 italic text-xl font-medium">
+            Fotografia de eventos
+          </p>
+          <p className="text-justify p-1 text-slate-700">
+            {EVENTS_DESCRIPTION}
+          </p>
+          <Link
+            to={`/portfolio/?type=${PortfolioParamTypes.EVENTS}`}
+            className="transition self-center font-medium rounded-lg text-slate-100 shadow bg-slate-800 hover:bg-slate-700 px-5 py-2"
+          >
+            Ver mas
+          </Link>
+        </div>
+      </div>
+      <AboutCardComponent />
       <SocialsComponent className="self-center" />
-      {/* <img src={bgImage} /> */}
+      <hr className="w-1/2 h-1 mx-auto my-4 border-0 rounded-lg md:my-10 bg-slate-400" />
     </div>
   );
 };

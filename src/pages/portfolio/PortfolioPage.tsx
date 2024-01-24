@@ -1,14 +1,39 @@
-import React, { Fragment, useState } from "react";
+import React from "react";
 import { MasonryComponent } from "../../components/MasonryComponent";
+import { ReactComponent as TopArrowIcon } from "../../assets/svg/arrow-top-right-svgrepo-com.svg";
 
-import { Tab } from "@headlessui/react";
-import { PhotoTypes } from "../../types";
+import { PhotoTypes, PortfolioParamTypes } from "../../types";
 import { useFirestore } from "../../hooks/useFirestore";
 import { DocumentData } from "firebase/firestore";
+import { Link, useSearchParams } from "react-router-dom";
+import {
+  EVENTS_DESCRIPTION,
+  GENERAL_DESCRIPTION,
+  PORTRAITS_DESCRIPTION,
+} from "../../utils/Constants";
+
+const tabList = [
+  {
+    path: "/portfolio/",
+    label: PhotoTypes.TODAS,
+    value: null,
+  },
+  {
+    path: `?type=${PortfolioParamTypes.PORTRAITS}`,
+    label: PhotoTypes.RETRATO,
+    value: PortfolioParamTypes.PORTRAITS,
+  },
+  {
+    path: `?type=${PortfolioParamTypes.EVENTS}`,
+    label: PhotoTypes.EVENTO,
+    value: PortfolioParamTypes.EVENTS,
+  },
+];
 
 export const PortfolioPage = () => {
-  const [currentTab, setCurrentTab] = useState(0);
   const { data: images } = useFirestore("photos");
+  const [searchParams] = useSearchParams();
+  console.log(searchParams.get("type"));
 
   const sortByName = (a: DocumentData, b: DocumentData) => {
     const textA = a.name.toUpperCase();
@@ -16,46 +41,70 @@ export const PortfolioPage = () => {
     return textA < textB ? -1 : textA > textB ? 1 : 0;
   };
 
+  const filterImageList = () => {
+    let filteredList = images.filter((image) => {
+      switch (searchParams.get("type")) {
+        case PortfolioParamTypes.PORTRAITS:
+          return image.type.includes(PhotoTypes.RETRATO);
+        case PortfolioParamTypes.EVENTS:
+          return image.type.includes(PhotoTypes.EVENTO);
+        default:
+          return image;
+      }
+    });
+
+    if (searchParams.get("type") !== null) {
+      return filteredList.sort(sortByName);
+    }
+
+    return filteredList;
+  };
+
+  const getDescription = () => {
+    switch (searchParams.get("type")) {
+      case PortfolioParamTypes.PORTRAITS:
+        return PORTRAITS_DESCRIPTION;
+      case PortfolioParamTypes.EVENTS:
+        return EVENTS_DESCRIPTION;
+      default:
+        return GENERAL_DESCRIPTION;
+    }
+  };
+
   return (
-    <div className="pt-8 to-slate-100 from-slate-400 bg-gradient-to-b">
-      <Tab.Group
-        onChange={(index) => {
-          setCurrentTab(index);
-        }}
-        defaultIndex={currentTab}
+    <div className="flex flex-col items-center gap-6 pt-8 to-slate-100 from-slate-400 bg-gradient-to-b">
+      <div className="flex justify-center gap-3 md:gap-4 m-auto">
+        {tabList.map((tab) => (
+          <Link
+            key={tab.path}
+            to={tab.path}
+            className={`px-4 py-1 md:text-base text-lg transition md:hover:bg-slate-700 rounded-t text-slate-100 font-semibold border-b-2  ${
+              searchParams.get("type") === tab.value
+                ? "border-slate-100"
+                : "border-slate-700 opacity-80"
+            }`}
+          >
+            {tab.label}
+          </Link>
+        ))}
+      </div>
+      <div className="w-11/12 max-w-5xl flex flex-col gap-2">
+        <p className="text-justify text-lg p-1 text-slate-800">
+          {getDescription()}
+        </p>
+      </div>
+      <Link
+        to="/contact"
+        className="transition rounded-lg text-slate-100 shadow bg-slate-800 hover:bg-slate-700 px-5 py-2"
       >
-        <Tab.List className="flex justify-center gap-4 w-fit m-auto">
-          {Object.values(PhotoTypes).map((tabName) => (
-            <Tab key={tabName} as={Fragment}>
-              {({ selected }) => (
-                <button
-                  className={`px-2 py-1 md:w-20 w-28 transition md:hover:bg-slate-700 rounded-t text-slate-100 font-semibold border-b-2  ${
-                    selected
-                      ? "border-slate-100"
-                      : "border-slate-700 opacity-80"
-                  }`}
-                >
-                  {tabName}
-                </button>
-              )}
-            </Tab>
-          ))}
-        </Tab.List>
-      </Tab.Group>
+        <div className="flex items-center">
+          Reserva tu evento o sesión{" "}
+          <TopArrowIcon className="inline-block	h-[30px] w-[30px]" />
+        </div>
+      </Link>
       <MasonryComponent
-        className="w-11/12 p-2 sm:p-4 my-5 mx-auto"
-        images={images
-          .filter((image) => {
-            switch (currentTab) {
-              case 1:
-                return image.type.includes(PhotoTypes.RETRATO);
-              case 2:
-                return image.type.includes(PhotoTypes.EVENTO);
-              default:
-                return image;
-            }
-          })
-          .sort(sortByName)}
+        className="w-11/12 p-2 sm:p-4 mb-5 mx-auto"
+        images={filterImageList()}
       />
     </div>
   );

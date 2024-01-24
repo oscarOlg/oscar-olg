@@ -12,8 +12,8 @@ function App() {
       <Route path="/" element={<LayoutComponent />}>
         <Route index element={<HomePage />} />
         <Route path="portfolio" element={<PortfolioPage />} />
-        {/* <Route path="about" element={<AboutPage />} /> */}
         <Route path="contact" element={<ContactPage />} />
+        {/* <Route path="about" element={<AboutPage />} /> */}
         {/* <Route path="*" element={<NoPage />} /> */}
       </Route>
     </Routes>

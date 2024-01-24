@@ -7,7 +7,7 @@ import { LogoComponent } from "./LogoComponent";
 
 const links = [
   { href: "/", label: "Inicio" },
-  { href: "/Portfolio", label: "Portafolio" },
+  { href: "/portfolio", label: "Portafolio" },
   // { href: "/about", label: "Sobre mi" },
   { href: "/contact", label: "Contacto" },
 ];

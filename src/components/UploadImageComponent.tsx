@@ -32,7 +32,7 @@ export const UploadImageComponent = () => {
     await addDoc(collection(firestore_db, "photos"), {
       url,
       name,
-      type: [PhotoTypes.RETRATO],
+      type: [PhotoTypes.EVENTO],
     });
   };
   // const [imgUrl, setImgUrl] = useState<null | string>(null);
