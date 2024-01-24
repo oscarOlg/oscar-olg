@@ -161,7 +161,6 @@ export const ContactPage = () => {
           )}
           {!(success || error) && <div className="p-4"></div>}
         </form>
-        <hr className="w-1/2 h-1 mx-auto mt-10 border-0 rounded-lg bg-slate-400" />
       </div>
     </div>
   );
