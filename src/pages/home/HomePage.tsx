@@ -2,7 +2,7 @@ import React from "react";
 import { useFirestore } from "../../hooks/useFirestore";
 import { CarouselComponent } from "../../components/CarouselComponent";
 import { SocialsComponent } from "../../components/SocialsComponent";
-import portraitCover from "../../assets/images/portrait-cover.jpg";
+import portraitCover from "../../assets/images/DSC0922.jpg";
 import eventCover from "../../assets/images/event-cover.jpg";
 import { AboutCardComponent } from "../../components/AboutCardComponent";
 import { Link } from "react-router-dom";
@@ -12,12 +12,14 @@ import {
   EVENTS_DESCRIPTION,
 } from "../../utils/Constants";
 import { motion } from "framer-motion";
+// import { UploadImageComponent } from "../../components/UploadImageComponent";
 
 export const HomePage = () => {
   const { data: images } = useFirestore("photos");
 
   return (
     <div className="flex flex-col bg-slate-300 gap-7 lg:pt-7 pb-9">
+      {/* <UploadImageComponent /> */}
       <CarouselComponent images={images} />
       <motion.div
         initial={{ opacity: 0 }}
