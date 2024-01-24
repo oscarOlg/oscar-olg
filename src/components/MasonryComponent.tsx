@@ -26,7 +26,7 @@ export const MasonryComponent = ({
     });
   }, []);
 
-  const scrollToTop = () => {
+  const scrollTop = () => {
     window.scrollTo({
       top: 0,
       behavior: "smooth", // for smoothly scrolling
@@ -71,7 +71,7 @@ export const MasonryComponent = ({
       />
       {showButton && (
         <button
-          onClick={scrollToTop}
+          onClick={scrollTop}
           className="fixed cursor-pointer font-bold text-2xl right-[20px] bottom-[25px] rounded-full bg-slate-100 border-slate-500 opacity-90 border-2 text-slate-800 hover:text-slate-50 hover:bg-slate-500 px-2"
         >
           ^
