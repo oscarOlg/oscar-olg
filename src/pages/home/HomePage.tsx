@@ -11,6 +11,7 @@ import {
   PORTRAITS_DESCRIPTION,
   EVENTS_DESCRIPTION,
 } from "../../utils/Constants";
+import { motion } from "framer-motion";
 
 export const HomePage = () => {
   const { data: images } = useFirestore("photos");
@@ -18,7 +19,12 @@ export const HomePage = () => {
   return (
     <div className="flex flex-col bg-slate-300 gap-7 lg:pt-7 pb-9">
       <CarouselComponent images={images} />
-      <div className="w-8/12 max-w-5xl items-center flex md:flex-row flex-col gap-7 self-center">
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className="w-8/12 max-w-5xl items-center flex md:flex-row flex-col gap-7 self-center"
+      >
         <img
           className="self-center h-64 sm:h-96"
           src={portraitCover}
@@ -38,9 +44,14 @@ export const HomePage = () => {
             Ver mas
           </Link>
         </div>
-      </div>
+      </motion.div>
       <hr className="w-1/2 h-1 mx-auto my-4 border-0 rounded-lg md:my-10 bg-slate-400" />
-      <div className="w-8/12 max-w-5xl items-center flex md:flex-row md:flex-row-reverse flex-col gap-7 self-center">
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className="w-8/12 max-w-5xl items-center flex md:flex-row md:flex-row-reverse flex-col gap-7 self-center"
+      >
         <img
           className="self-center h-64 sm:h-96"
           src={eventCover}
@@ -60,7 +71,7 @@ export const HomePage = () => {
             Ver mas
           </Link>
         </div>
-      </div>
+      </motion.div>
       <AboutCardComponent />
       <SocialsComponent className="self-center" />
       <hr className="w-1/2 h-1 mx-auto my-4 border-0 rounded-lg md:my-10 bg-slate-400" />

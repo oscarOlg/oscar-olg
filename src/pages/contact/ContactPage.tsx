@@ -88,9 +88,13 @@ export const ContactPage = () => {
           <div className="flex flex-col gap-3 text-justify p-1 text-slate-700">
             <p>
               <b>¡Me encantaría escuchar de ti! </b>Si tienes alguna pregunta o
-              estás interesado en <u>reservar una sesión o un evento</u>, no
-              dudes en ponerte en contacto, tendre una respuesta para ti en las
-              proximas horas de recibir tu mensaje.
+              estás interesado en{" "}
+              <u>
+                conocer los costos y paquetes para reservar una sesión o un
+                evento de acuerdo a tus necesidades
+              </u>
+              , no dudes en ponerte en contacto, tendre una respuesta para ti en
+              las proximas horas de recibir tu mensaje.
             </p>
             <p>
               <u>Estoy abierto a colaboraciones y proyectos especiales</u>. Si
@@ -157,6 +161,7 @@ export const ContactPage = () => {
           )}
           {!(success || error) && <div className="p-4"></div>}
         </form>
+        <hr className="w-1/2 h-1 mx-auto mt-10 border-0 rounded-lg bg-slate-400" />
       </div>
     </div>
   );

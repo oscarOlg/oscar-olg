@@ -72,9 +72,9 @@ export const MasonryComponent = ({
       {showButton && (
         <button
           onClick={scrollToTop}
-          className="fixed cursor-pointer right-[15px] bottom-[20px] rounded-full bg-slate-100 border-slate-500 text-xl opacity-90 border-2 text-slate-800 hover:text-slate-50 hover:bg-slate-500 px-1"
+          className="fixed cursor-pointer font-bold text-2xl right-[20px] bottom-[25px] rounded-full bg-slate-100 border-slate-500 opacity-90 border-2 text-slate-800 hover:text-slate-50 hover:bg-slate-500 px-2"
         >
-          &#11205;
+          ^
         </button>
       )}
     </div>

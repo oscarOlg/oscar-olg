@@ -101,8 +101,10 @@ export const PortfolioPage = () => {
           <TopArrowIcon className="inline-block	h-[30px] w-[30px]" />
         </div>
       </Link>
+      <hr className="w-1/2 h-1 mx-auto border-0 rounded-lg my-1 bg-slate-500" />
+
       <MasonryComponent
-        className="w-11/12 p-2 sm:p-4 mb-5 mx-auto"
+        className="w-11/12 mb-5 mx-auto"
         images={filterImageList()}
       />
     </div>

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Lightbox, { ControllerRef } from "yet-another-react-lightbox";
 import { Inline } from "yet-another-react-lightbox/plugins";
 import { CarouselComponentProps } from "./types";
+import { motion } from "framer-motion";
 
 export const CarouselComponent = ({ images }: CarouselComponentProps) => {
   // const [open, setOpen] = useState(false);
@@ -39,7 +40,11 @@ export const CarouselComponent = ({ images }: CarouselComponentProps) => {
     setIndex(current);
 
   return (
-    <div className="">
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+    >
       <Lightbox
         className="rounded-lg	"
         index={index}
@@ -85,6 +90,6 @@ export const CarouselComponent = ({ images }: CarouselComponentProps) => {
         animation={{ fade: 0 }}
         controller={{ closeOnPullDown: true, closeOnBackdropClick: true }}
       /> */}
-    </div>
+    </motion.div>
   );
 };

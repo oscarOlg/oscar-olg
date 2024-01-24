@@ -1,5 +1,5 @@
 export enum PhotoTypes {
-  TODAS = "Todas",
+  TODAS = "Vista general",
   RETRATO = "Retrato",
   EVENTO = "Evento",
 }

@@ -3,6 +3,7 @@ import { ReactComponent as TopArrowIcon } from "../../assets/svg/arrow-top-right
 import profile from "../../assets/images/retrato.jpg";
 import { Link } from "react-router-dom";
 import { SocialsComponent } from "../../components/SocialsComponent";
+import { ABOUT_DESCRIPTION } from "../../utils/Constants";
 
 export const AboutPage = () => {
   return (
@@ -14,24 +15,7 @@ export const AboutPage = () => {
           alt="fotografia de retrato del fotografo"
         />
         <div className="flex flex-col justify-around gap-4 text-justify p-1	text-slate-700">
-          <p>
-            ¡Hola! Soy Oscar Sanchez Olguin, esposo, ingeniero y un apasionado
-            fotógrafo, con el deseo constante de{" "}
-            <u>capturar momentos y transformarlos en recuerdos atemporales.</u>
-          </p>
-          <p>
-            He tenido el privilegio de trabajar en una variedad de proyectos, en
-            Ciudad Jaurez, Chihuahua y en El Paso, Texas, desde{" "}
-            <b>bodas, eventos especiales y sesiones de retratos</b>. Considero
-            cada proyecto una nueva oportunidad para explorar mi creatividad,
-            contar historias, congelar emociones, y revelar la belleza en los
-            detalles cotidianos.
-          </p>
-          <p>
-            <b>Gracias por visitar y ser parte de mi viaje fotográfico</b>.
-            Estoy emocionado de poder compartir contigo la magia detrás de cada
-            imagen.
-          </p>
+          {ABOUT_DESCRIPTION}
           <Link
             to="/contact"
             className="mt-6 text-center self-center transition rounded-lg font-medium shadow text-slate-200 bg-slate-700 hover:bg-slate-500 px-3 py-2"
