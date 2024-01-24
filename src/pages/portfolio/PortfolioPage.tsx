@@ -71,8 +71,8 @@ export const PortfolioPage = () => {
   };
 
   return (
-    <div className="flex flex-col items-center gap-6 pt-8 to-slate-100 from-slate-400 bg-gradient-to-b">
-      <div className="flex justify-center gap-3  md:pt-0 pt-9 md:gap-4 m-auto">
+    <div className="flex flex-col items-center gap-6 md:pt-9 pt-20 to-slate-100 from-slate-400 bg-gradient-to-b">
+      <div className="flex justify-center gap-3 md:gap-4 m-auto">
         {tabList.map((tab) => (
           <Link
             key={tab.path}
