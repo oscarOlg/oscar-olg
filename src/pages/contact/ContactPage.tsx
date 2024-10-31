@@ -78,14 +78,14 @@ export const ContactPage = () => {
   return (
     <div>
       <div className="h-[300px] shadow items-center justify-evenly p-3 flex md:flex-row flex-col bg-[url('./assets/images/bg-image.jpg')] md:bg-fixed bg-cover bg-center">
-        <p className="italic text-xl w-10/12 md:text-2xl font-medium text-slate-50">
+        <p className="italic text-xl w-10/12 md:text-2xl font-medium text-zinc-50">
           Explorando la vida a través de la lente, capturando la esencia de cada
           instante.
         </p>
       </div>
       <div className="flex pt-8 pb-24 w-10/12	 m-auto md:justify-around items-center md:items-start gap-10 md:flex-row flex-col ">
         <div className="flex flex-col md:w-full w-3/4 gap-6">
-          <div className="flex flex-col gap-3 text-justify p-1 text-slate-700">
+          <div className="flex flex-col gap-3 text-justify p-1 text-zinc-700">
             <p>
               <b>¡Me encantaría escuchar de ti! </b>Si tienes alguna pregunta o
               estás interesado en{" "}
@@ -108,14 +108,14 @@ export const ContactPage = () => {
         <form
           ref={form}
           onSubmit={sendEmail}
-          className="flex flex-col w-full gap-4 shadow rounded-lg p-4 bg-slate-300 border-2 border-slate-400 text-slate-700 font-medium"
+          className="flex flex-col w-full gap-4 shadow rounded-lg p-4 bg-zinc-300 border-2 border-zinc-400 text-zinc-700 font-medium"
         >
           <div className="flex flex-col gap-2">
             <label className="flex gap-1">
               Nombre <p className="font-light">(Obligatorio)</p>
             </label>
             <input
-              className="rounded-lg py-1 px-2 border-2 border-slate-400"
+              className="rounded-lg py-1 px-2 border-2 border-zinc-400"
               type="text"
               name="user_name"
               required
@@ -126,7 +126,7 @@ export const ContactPage = () => {
               Email <p className="font-light">(Obligatorio)</p>
             </label>
             <input
-              className="rounded-lg py-1 px-2 border-2 border-slate-400"
+              className="rounded-lg py-1 px-2 border-2 border-zinc-400"
               type="email"
               name="user_email"
               required
@@ -137,13 +137,13 @@ export const ContactPage = () => {
               Mensaje <p className="font-light">(Obligatorio)</p>
             </label>
             <textarea
-              className="rounded-lg p-2 min-h-28 border-2 border-slate-400"
+              className="rounded-lg p-2 min-h-28 border-2 border-zinc-400"
               name="message"
               required
             />
           </div>
           <button
-            className="transition self-center w-36 rounded-lg text-slate-100 shadow bg-slate-800 hover:bg-slate-700 px-3 py-2"
+            className="transition self-center w-36 rounded-lg text-zinc-100 shadow bg-zinc-800 hover:bg-zinc-700 px-3 py-2"
             type="submit"
             disabled={isLoading}
           >

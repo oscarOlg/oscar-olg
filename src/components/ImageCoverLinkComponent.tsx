@@ -17,7 +17,7 @@ export const ImageCoverLinkComponent = ({
         src={image}
         alt={title}
       />
-      <p className="uppercase absolute pl-5 self-center italic font-semibold text-base sm:text-3xl text-slate-50">
+      <p className="uppercase absolute pl-5 self-center italic font-semibold text-base sm:text-3xl text-zinc-50">
         {title}
       </p>
     </Link>

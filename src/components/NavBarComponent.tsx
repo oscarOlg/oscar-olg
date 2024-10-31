@@ -16,14 +16,14 @@ export const NavBarComponent = () => {
   const { isMobile } = useMobileView();
 
   return (
-    <div className="opacity-95 fixed top-0 w-full px-5 h-[75px] flex center-items z-30 bg-slate-100 shadow-md">
+    <div className="opacity-95 fixed top-0 w-full px-5 h-[75px] flex center-items z-30 bg-zinc-100 shadow-md">
       {isMobile ? (
         <Menu as="div" className="relative grid w-full">
           <div className="z-50 flex justify-between self-center">
             <Link to="/">
               <LogoComponent />
             </Link>
-            <Menu.Button className="transition rounded-lg shadow font-medium bg-slate-400 bg-opacity-70 hover:bg-opacity-30 px-3 py-2">
+            <Menu.Button className="transition rounded-lg shadow font-medium bg-zinc-400 bg-opacity-70 hover:bg-opacity-30 px-3 py-2">
               Menu
             </Menu.Button>
           </div>
@@ -37,13 +37,13 @@ export const NavBarComponent = () => {
             leaveTo="opacity-0"
           >
             <Menu.Items className="h-full w-full fixed top-[75px] right-0 z-40">
-              <div className="h-full flex flex-col gap-7 items-end px-3 pb-3 pt-10 from-slate-100 from-35% bg-gradient-to-bl">
+              <div className="h-full flex flex-col gap-7 items-end px-3 pb-3 pt-10 from-zinc-100 from-35% bg-gradient-to-bl">
                 {links.map((link) => (
                   <Menu.Item key={link.href}>
                     <Link
                       key={link.href}
                       to={link.href}
-                      className="transition w-[90px] text-right border-slate-400 border-b-2 rounded-t hover:bg-slate-400 hover:bg-opacity-20 px-3 py-2"
+                      className="transition w-[90px] text-right border-zinc-400 border-b-2 rounded-t hover:bg-zinc-400 hover:bg-opacity-20 px-3 py-2"
                     >
                       {link.label}
                     </Link>
@@ -57,7 +57,7 @@ export const NavBarComponent = () => {
           </Transition>
         </Menu>
       ) : (
-        <div className="grid grid-cols-4 w-full items-center text-slate-700 xl:gap-5 gap-2 md:gap-1">
+        <div className="grid grid-cols-4 w-full items-center text-zinc-700 xl:gap-5 gap-2 md:gap-1">
           <Link to="/">
             <LogoComponent />
           </Link>
@@ -66,7 +66,7 @@ export const NavBarComponent = () => {
               <Link
                 key={link.href}
                 to={link.href}
-                className="transition rounded-t border-slate-400 border-b-2 font-medium hover:bg-slate-300 md:px-2 lg:px-3 py-2"
+                className="transition rounded-t border-zinc-400 border-b-2 font-medium hover:bg-zinc-300 md:px-2 lg:px-3 py-2"
               >
                 {link.label}
               </Link>

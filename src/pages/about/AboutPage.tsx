@@ -8,17 +8,17 @@ import { ABOUT_DESCRIPTION } from "../../utils/Constants";
 export const AboutPage = () => {
   return (
     <div className="w-full h-full pt-8 pb-24">
-      <div className="flex w-10/12 items-center md:items-start md:flex-row flex-col gap-4 bg-slate-200 p-9 m-auto shadow rounded-lg">
+      <div className="flex w-10/12 items-center md:items-start md:flex-row flex-col gap-4 bg-zinc-200 p-9 m-auto shadow rounded-lg">
         <img
           className="md:h-[500px]  rounded-lg"
           src={profile}
           alt="fotografia de retrato del fotografo"
         />
-        <div className="flex flex-col justify-around gap-4 text-justify p-1	text-slate-700">
+        <div className="flex flex-col justify-around gap-4 text-justify p-1	text-zinc-700">
           {ABOUT_DESCRIPTION}
           <Link
             to="/contact"
-            className="mt-6 text-center self-center transition rounded-lg font-medium shadow text-slate-200 bg-slate-700 hover:bg-slate-500 px-3 py-2"
+            className="mt-6 text-center self-center transition rounded-lg font-medium shadow text-zinc-200 bg-zinc-700 hover:bg-zinc-500 px-3 py-2"
           >
             <div className="text-xl flex items-center font-medium">
               ¡Capturemos momentos, creando recuerdos!{" "}

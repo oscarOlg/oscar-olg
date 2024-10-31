@@ -18,7 +18,7 @@ export const HomePage = () => {
   const { data: images } = useFirestore("photos");
 
   return (
-    <div className="flex flex-col bg-slate-300 gap-7 lg:pt-7 pb-9">
+    <div className="flex flex-col bg-zinc-300 gap-7 lg:pt-7 pb-9">
       {/* <UploadImageComponent /> */}
       <CarouselComponent images={images} />
       <motion.div
@@ -33,21 +33,21 @@ export const HomePage = () => {
           alt="retratos"
         />
         <div className="flex w-full flex-col gap-4 md:gap-10">
-          <p className="text-slate-700 italic text-xl font-medium">
+          <p className="text-zinc-700 italic text-xl font-medium">
             Fotografia de retrato
           </p>
-          <p className="text-justify p-1 text-slate-700">
+          <p className="text-justify p-1 text-zinc-700">
             {PORTRAITS_DESCRIPTION}
           </p>
           <Link
             to={`/portfolio/?type=${PortfolioParamTypes.PORTRAITS}`}
-            className="transition self-center font-medium rounded-lg text-slate-100 shadow bg-slate-800 hover:bg-slate-700 px-5 py-2"
+            className="transition self-center font-medium rounded-lg text-zinc-100 shadow bg-zinc-800 hover:bg-zinc-700 px-5 py-2"
           >
             Ver mas
           </Link>
         </div>
       </motion.div>
-      <hr className="w-1/2 h-1 mx-auto my-4 border-0 rounded-lg md:my-10 bg-slate-400" />
+      <hr className="w-1/2 h-1 mx-auto my-4 border-0 rounded-lg md:my-10 bg-zinc-400" />
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -60,15 +60,13 @@ export const HomePage = () => {
           alt="eventos"
         />
         <div className="flex w-full flex-col justify-evenly gap-4">
-          <p className="text-slate-700 italic text-xl font-medium">
+          <p className="text-zinc-700 italic text-xl font-medium">
             Fotografia de eventos
           </p>
-          <p className="text-justify p-1 text-slate-700">
-            {EVENTS_DESCRIPTION}
-          </p>
+          <p className="text-justify p-1 text-zinc-700">{EVENTS_DESCRIPTION}</p>
           <Link
             to={`/portfolio/?type=${PortfolioParamTypes.EVENTS}`}
-            className="transition self-center font-medium rounded-lg text-slate-100 shadow bg-slate-800 hover:bg-slate-700 px-5 py-2"
+            className="transition self-center font-medium rounded-lg text-zinc-100 shadow bg-zinc-800 hover:bg-zinc-700 px-5 py-2"
           >
             Ver mas
           </Link>
@@ -76,7 +74,7 @@ export const HomePage = () => {
       </motion.div>
       <AboutCardComponent />
       <SocialsComponent className="self-center" />
-      <hr className="w-1/2 h-1 mx-auto my-4 border-0 rounded-lg md:my-10 bg-slate-400" />
+      <hr className="w-1/2 h-1 mx-auto my-4 border-0 rounded-lg md:my-10 bg-zinc-400" />
     </div>
   );
 };

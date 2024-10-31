@@ -71,16 +71,16 @@ export const PortfolioPage = () => {
   };
 
   return (
-    <div className="flex flex-col items-center gap-6 md:pt-9 pt-20 to-slate-100 from-slate-400 bg-gradient-to-b">
+    <div className="flex flex-col items-center gap-6 md:pt-9 pt-20 to-zinc-100 from-zinc-400 bg-gradient-to-b">
       <div className="flex justify-center gap-3 md:gap-4 m-auto">
         {tabList.map((tab) => (
           <Link
             key={tab.path}
             to={tab.path}
-            className={`px-4 py-1 md:text-base text-lg transition md:hover:bg-slate-700 rounded-t text-slate-100 font-semibold border-b-2  ${
+            className={`px-4 py-1 md:text-base text-lg transition md:hover:bg-zinc-700 rounded-t text-zinc-100 font-semibold border-b-2  ${
               searchParams.get("type") === tab.value
-                ? "border-slate-100"
-                : "border-slate-700 opacity-80"
+                ? "border-zinc-100"
+                : "border-zinc-700 opacity-80"
             }`}
           >
             {tab.label}
@@ -88,20 +88,20 @@ export const PortfolioPage = () => {
         ))}
       </div>
       <div className="w-11/12 max-w-5xl flex flex-col gap-2">
-        <p className="text-justify text-lg p-1 text-slate-800">
+        <p className="text-justify text-lg p-1 text-zinc-800">
           {getDescription()}
         </p>
       </div>
       <Link
         to="/contact"
-        className="transition rounded-lg text-slate-100 shadow bg-slate-800 hover:bg-slate-700 px-5 py-2"
+        className="transition rounded-lg text-zinc-100 shadow bg-zinc-800 hover:bg-zinc-700 px-5 py-2"
       >
         <div className="flex items-center">
           Reserva tu evento o sesión{" "}
           <TopArrowIcon className="inline-block	h-[30px] w-[30px]" />
         </div>
       </Link>
-      <hr className="w-1/2 h-1 mx-auto border-0 rounded-lg my-1 bg-slate-500" />
+      <hr className="w-1/2 h-1 mx-auto border-0 rounded-lg my-1 bg-zinc-500" />
 
       <MasonryComponent
         className="w-11/12 mb-5 mx-auto"

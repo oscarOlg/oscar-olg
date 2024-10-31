@@ -1,6 +1,6 @@
 export const EVENTS_DESCRIPTION = (
   <>
-    Trabajo tanto en <b>bodas y eventos</b> con la intención de{" "}
+    Trabajo en <b>bodas y eventos</b> con la intención de{" "}
     <u>contar historias a través de imágenes emotivas y auténticas</u>, desde la
     intimidad de las ceremonias hasta la gozo de los eventos, mi objetivo es
     crear recuerdos visuales que perduren toda la vida.{" "}
@@ -38,8 +38,8 @@ export const GENERAL_DESCRIPTION = (
 export const ABOUT_DESCRIPTION = (
   <>
     <p>
-      ¡Hola! Soy Oscar Sanchez, esposo, ingeniero y un apasionado fotógrafo, con
-      el deseo constante de{" "}
+      ¡Hola! Soy Oscar Sanchez, ingeniero y un apasionado fotógrafo, con el
+      deseo constante de{" "}
       <u>capturar momentos y transformarlos en recuerdos atemporales.</u>
     </p>
     <p>
