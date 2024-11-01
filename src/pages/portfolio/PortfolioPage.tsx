@@ -107,6 +107,7 @@ export const PortfolioPage = () => {
         className="w-11/12 mb-5 mx-auto"
         images={filterImageList()}
       />
+      <hr className="w-1/2 h-1 mx-auto border-0 rounded-lg mb-7 bg-zinc-500" />
     </div>
   );
 };

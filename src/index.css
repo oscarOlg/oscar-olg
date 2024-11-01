@@ -17,19 +17,19 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #0f172a;
+  background: #18181b;
   /* border-radius: 0 0.75rem 0.75rem 0; */
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #475569;
+  background: #52525b;
   border-radius: 0.75rem;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #64748b;
+  background: #71717a;
 }
 
 /* @media screen and (max-width: 768px) {

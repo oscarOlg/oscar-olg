@@ -43,12 +43,8 @@ export const ABOUT_DESCRIPTION = (
       <u>capturar momentos y transformarlos en recuerdos atemporales.</u>
     </p>
     <p>
-      Aunque estoy basado en{" "}
-      <u>
-        Ciudad Juarez, estoy disponible para viajar para proyectos especiales
-      </u>
-      . Si tienes una ubicación específica en mente, ¡no dudes en mencionarlo!.
-      He tenido el privilegio de trabajar en una variedad de proyectos de{" "}
+      Si tienes una ubicación específica en mente, ¡no dudes en mencionarlo!. He
+      tenido el privilegio de trabajar en una variedad de proyectos de{" "}
       <b>bodas, eventos especiales y sesiones de retratos</b>. Considero cada
       proyecto una nueva oportunidad para explorar mi creatividad, contar
       historias, congelar emociones, y revelar la belleza en los detalles

@@ -2,7 +2,7 @@ import React from "react";
 import { useFirestore } from "../../hooks/useFirestore";
 import { CarouselComponent } from "../../components/CarouselComponent";
 import { SocialsComponent } from "../../components/SocialsComponent";
-import portraitCover from "../../assets/images/DSC0922.jpg";
+import portraitCover from "../../assets/images/DSCF2015.jpg";
 import eventCover from "../../assets/images/event-cover.jpg";
 import { AboutCardComponent } from "../../components/AboutCardComponent";
 import { Link } from "react-router-dom";
